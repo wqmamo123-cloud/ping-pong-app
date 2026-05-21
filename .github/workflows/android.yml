@@ -23,7 +23,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install gradle -y
-        gradle wrapper --gradle-version 8.7
+        gradle wrapper --gradle-version 9.3.1
 
     - name: Grant Execute Permission for Generated Wrapper
       run: chmod +x gradlew
