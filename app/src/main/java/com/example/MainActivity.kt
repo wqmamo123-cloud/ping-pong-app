@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 class MainActivity : ComponentActivity() {
-    override fun Bundle? {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
@@ -28,6 +28,5 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun PingPongGame() {
-    // هنا كود اللعبة الافتراضي، يمكنك تركه هكذا للتجربة أو التأكد من وجود محتوى اللعبة بالأسفل
     Text(text = "Ping Pong Game Started!")
 }
