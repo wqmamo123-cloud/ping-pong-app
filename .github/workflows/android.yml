@@ -1,4 +1,4 @@
-name: Build 32-Bit Android APK
+name: Build Universal 32-Bit Android APK
 
 on:
   push:
@@ -18,16 +18,17 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: gradle
 
-    - name: Grant Execute Permission for Gradle
+    - name: Install Gradle and Generate Real Wrapper
       run: |
-        if [ ! -f gradlew ]; then
-          gradle wrapper
-        fi
-        chmod +x gradlew
+        sudo apt-get update
+        sudo apt-get install gradle -y
+        gradle wrapper --gradle-version 8.7
 
-    - name: Build with Gradle (Universal APK)
+    - name: Grant Execute Permission for Generated Wrapper
+      run: chmod +x gradlew
+
+    - name: Build Universal Debug APK
       run: ./gradlew assembleDebug
 
     - name: Upload Finished APK
