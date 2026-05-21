@@ -1,0 +1,6 @@
+{
+  "name": "Ping Pong",
+  "description": "A retro-style Ping Pong game against a simple AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
