@@ -25,6 +25,10 @@ jobs:
         sudo apt-get install gradle -y
         gradle wrapper --gradle-version 9.3.1
 
+    - name: Generate Auto Debug Keystore
+      run: |
+        keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+
     - name: Grant Execute Permission for Generated Wrapper
       run: chmod +x gradlew
 
